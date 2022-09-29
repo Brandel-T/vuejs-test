@@ -1,0 +1,8 @@
+/* code for global style */
+@import url(
+    "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&family=Ubuntu:wght@300&display=swap"
+);
+
+body {
+    font-family: "JetBrains Mono", monospace;
+}
