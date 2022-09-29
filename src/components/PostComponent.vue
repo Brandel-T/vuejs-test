@@ -17,7 +17,6 @@ import Post from '@/model/Post';
           label="Delete"
           icon="pi pi-trash"
           class="p-button-danger"
-          @click="deletePost(post)"
         />
       </span>
     </template>
@@ -34,15 +33,6 @@ export default {
   props: {
     post: Object as PropType<Post>,
     class: String,
-  },
-  setup() {
-    const postsStore = usePostStore();
-
-    function deletePost(post: Post | undefined) {
-      postsStore.deletePost(post?.id);
-    }
-
-    return { deletePost };
   },
 };
 </script>

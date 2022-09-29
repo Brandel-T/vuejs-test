@@ -62,12 +62,6 @@ export const usePostStore = defineStore("posts", () => {
       });
   }
 
-  function deletePost(id: string | undefined) {
-    fetch(`${BASE_URL}/posts/${id}`, {
-      method: "DELETE",
-    }).then((res) => console.log(res));
-  }
-
   function createPost() {
     axios
       .post("https://jsonplaceholder.typicode.com/posts", {
@@ -93,7 +87,6 @@ export const usePostStore = defineStore("posts", () => {
     getPostById,
     getAllPosts,
     updatePost,
-    deletePost,
     createPost,
   };
 });
