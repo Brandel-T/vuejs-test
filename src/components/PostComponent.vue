@@ -26,7 +26,6 @@ import Post from '@/model/Post';
 <script lang="ts">
 import Post from "@/model/Post";
 import { PropType } from "vue";
-import { usePostStore } from "@/store/poststore";
 
 export default {
   name: "PostComponent",
@@ -46,14 +45,6 @@ export default {
   border-radius: 3px;
   font-weight: 800;
 }
-/* .p-card-footer span {
-  display: flex;
-  padding: 0 0.5em;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: #166eeb2e;
-} */
 .p-card-footer > span i {
   margin-right: 7px;
 }

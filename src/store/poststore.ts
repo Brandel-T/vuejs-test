@@ -4,11 +4,6 @@ import Post from "@/model/Post";
 import axios from "axios";
 import { useRouter } from "vue-router";
 
-/**
- * state <--> data
- * getters <--> computed
- * actions <--> methods
- */
 export const usePostStore = defineStore("posts", () => {
   const posts = ref<Post[]>([]); // state
   const post = ref<Post>({
@@ -71,7 +66,7 @@ export const usePostStore = defineStore("posts", () => {
         userId: post.value.userId,
       })
       .then((res) => {
-        // index.value = 1;
+        console.log(res.data);
       })
       .catch((reason) => {
         alert("POST request rejected. See reason in the console");
