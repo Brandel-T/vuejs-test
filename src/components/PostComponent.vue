@@ -1,6 +1,6 @@
 import Post from '@/model/Post';
 <template>
-  <card-component>
+  <card-component :style="'color: #64748b'">
     <template #title>{{ post?.title }}</template>
     <template #content>{{ post?.body }}</template>
     <template #footer>
@@ -13,11 +13,11 @@ import Post from '@/model/Post';
         <router-link :to="{ name: 'detail', params: { id: post?.id } }">
           <ButtonComponent label="Edit" icon="pi pi-pencil" />
         </router-link>
-        <ButtonComponent
+        <!-- <ButtonComponent
           label="Delete"
           icon="pi pi-trash"
           class="p-button-danger"
-        />
+        /> -->
       </span>
     </template>
   </card-component>

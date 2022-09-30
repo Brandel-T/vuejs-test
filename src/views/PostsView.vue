@@ -5,31 +5,8 @@
     </header>
     <div class="posts">
       <VirtualScroller :items="postsStore.posts" :itemSize="50">
-        <template v-slot:item="{ item, options }">
-          <card-component :style="'color: #64748b'">
-            <template #title>{{ item.title }}</template>
-            <template #content>{{ item.body }}</template>
-            <template #footer>
-              <span>
-                <i class="pi pi-user"></i>
-                {{ item.userId }}
-              </span>
-
-              <span class="actions">
-                <router-link
-                  :to="{
-                    name: 'detail',
-                    params: {
-                      id: item.id,
-                      userId: options.index,
-                    },
-                  }"
-                >
-                  <ButtonComponent label="Edit" icon="pi pi-pencil" />
-                </router-link>
-              </span>
-            </template>
-          </card-component>
+        <template v-slot:item="{ item }">
+          <PostComponent :post="item" />
         </template>
       </VirtualScroller>
     </div>
@@ -39,8 +16,10 @@
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import { usePostStore } from "@/store/poststore";
+import PostComponent from "@/components/PostComponent.vue";
 
 export default defineComponent({
+  components: { PostComponent },
   setup() {
     const postsStore = usePostStore();
     const posts = postsStore.posts;
