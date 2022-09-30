@@ -37,9 +37,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onBeforeMount, onMounted } from "vue";
+import { defineComponent, onMounted } from "vue";
 import { usePostStore } from "@/store/poststore";
-import { While } from "@babel/types";
 
 export default defineComponent({
   setup() {
